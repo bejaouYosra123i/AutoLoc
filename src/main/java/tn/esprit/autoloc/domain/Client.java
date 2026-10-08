@@ -37,6 +37,6 @@ public class Client {
 
     @Column(nullable = false)
     private LocalDate dateInscription;
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Set<Reservation> reservations;
 }
