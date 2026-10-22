@@ -1,7 +1,7 @@
 package tn.esprit.autoloc.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import tn.esprit.autoloc.domain.Reservation;
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.autoloc.domain.Paiement;
 
-public interface IPaiementRepository extends CrudRepository<Reservation,Long> {
+public interface IPaiementRepository extends JpaRepository<Paiement, Long> {
 }

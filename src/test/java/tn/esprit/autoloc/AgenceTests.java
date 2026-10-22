@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tn.esprit.autoloc.domain.Agence;
 import tn.esprit.autoloc.domain.CategorieVehicule;
@@ -17,6 +18,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import tn.esprit.autoloc.service.IAgenceService;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -32,6 +37,8 @@ public class AgenceTests {
     private AgenceRepositoryMock basicAgenceRepository;
     @Autowired
     private IAgenceRepository fullAgenceRepository;
+    @Autowired
+    private IAgenceService agenceService;
 
 
     private void addAgence(CrudRepository<Agence,Long> crudRepository) {
@@ -96,7 +103,7 @@ public class AgenceTests {
     }
 
     @Test
-
+    @Transactional
     public void basicLoadAgence() {
         loadAgence(basicAgenceRepository, "basic");
     }
@@ -125,15 +132,34 @@ public class AgenceTests {
         Page<Agence> page = fullAgenceRepository.findAll(pageable);
 
         sb.append("Total pages : ").append(page.getTotalPages()).append("\n");
-        sb.append("Page en cours : ").append(page.getNumber()).append("\n");
 
-        for (Agence a : page.getContent()) {
-            sb.append(a.getIdAgence()).append(" | ").append(a.getNom()).append("\n");
+        for (int i = 0; i < page.getTotalPages(); i++) {
+            pageable = PageRequest.of(i, 2, Sort.by(Sort.Direction.DESC, "idAgence"));
+            page = fullAgenceRepository.findAll(pageable);
+
+            sb.append("--- Page en cours : ").append(page.getNumber()).append("\n");
+            for (Agence a : page.getContent()) {
+                sb.append(a.getIdAgence()).append(" | ").append(a.getNom()).append("\n");
+            }
         }
         Assert.fail(sb.toString());
     }
+    @Test
+    public void createAgence() {
+        Agence agence = new Agence();
+        agence.setNom("Agence Tunis");
+        agence.setAdresse("Avenue Habib Bourguiba, Tunis");
+        agence.setTelephone("71000000");
+        agence.setVille("Tunis");
+        Agence saved = agenceService.create(agence);
+
+        assertNotNull(saved);
+        assertNotNull(saved.getIdAgence());
+        assertEquals("Agence Tunis", saved.getNom());
+    }
 
 }
+@Repository
 interface  AgenceRepositoryMock  extends CrudRepository<Agence,Long> {
 
 }

@@ -1,7 +1,7 @@
 package tn.esprit.autoloc.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import tn.esprit.autoloc.domain.Client;
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.autoloc.domain.Equipement;
 
-public interface IEquipementRepository extends CrudRepository<Client,Long> {
+public interface IEquipementRepository extends JpaRepository<Equipement, Long> {
 }
