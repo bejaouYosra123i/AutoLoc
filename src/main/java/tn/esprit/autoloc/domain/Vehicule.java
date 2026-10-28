@@ -1,4 +1,5 @@
 package tn.esprit.autoloc.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,6 +43,7 @@ public class Vehicule {
     @ManyToOne
     private Agence agence;
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties("vehicule")
     private Set<Reservation> reservations;
     @ManyToMany
     @JoinTable(name = "vehicule_equipement",

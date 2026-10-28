@@ -45,3 +45,15 @@ C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\
 C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\service\ReservationServiceImpl.java
 C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\service\VehiculeServiceImpl.java
 C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\Utils.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\AgenceController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\ClientController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\ContratController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\EmployeController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\EquipementController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\MaintenanceController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\PaiementController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\ReservationController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\controller\VehiculeController.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\ErrorResponse.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\GlobalExceptionHandler.java
+C:\Users\yosra\Desktop\DASI4\ArchitectureSI\autoloc-api\src\main\java\tn\esprit\autoloc\web\OpenApiConfig.java
