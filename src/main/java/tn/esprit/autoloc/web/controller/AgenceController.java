@@ -8,10 +8,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.autoloc.calcul.VehiculeOffre;
 import tn.esprit.autoloc.domain.Agence;
 import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IVehiculeRepository;
 import tn.esprit.autoloc.service.IAgenceService;
+import tn.esprit.autoloc.service.IAgenceSimulationService;
 
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class AgenceController {
 
     private final IAgenceService agenceService;
     private final IVehiculeRepository vehiculeRepository;
+    private final IAgenceSimulationService simulationService;
 
     @Operation(summary = "Lister les agences",
             description = "Retourne la liste complète des agences avec leurs véhicules")
@@ -87,5 +90,16 @@ public class AgenceController {
         }
 
         agenceService.deleteById(id);
+    }
+    @GetMapping("/{id}/simuler")
+    public String simuler(@PathVariable Long id,
+                          @RequestParam int jours,
+                          @RequestParam VehiculeOffre offre) {
+        Agence agence = agenceService.findById(id);
+        return simulationService.simuler(agence, jours, offre);
+    }
+    @PutMapping("/{id}/employes")
+    public Agence updateAvecEmployes(@PathVariable Long id, @RequestBody Agence agence) {
+        return agenceService.updateAvecEmployes(id, agence);
     }
 }

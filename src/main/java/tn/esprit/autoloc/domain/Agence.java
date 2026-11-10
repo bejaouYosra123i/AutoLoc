@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,7 @@ public class Agence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAgence;
+    private int effectif;
 
     @Column(nullable = false, length = 100)
     private String nom;
@@ -36,5 +38,17 @@ public class Agence {
     private Set<Vehicule> vehicules;
     @OneToMany(mappedBy = "agence")
     @JsonIgnoreProperties("agence")
-    private Set<Employe> employes;
+
+    private Set<Employe> employes = new HashSet<>();
+
+
+    public void addEmploye(Employe employe) {
+        employes.add(employe);
+        employe.setAgence(this);
+    }
+
+    public void removeEmploye(Employe employe) {
+        employes.remove(employe);
+        employe.setAgence(null);
+    }
 }

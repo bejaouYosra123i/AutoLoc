@@ -3,6 +3,7 @@ package tn.esprit.autoloc.service;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.domain.Contrat;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IContratRepository;
 
 @Service
@@ -27,6 +28,11 @@ public class ContratServiceImpl extends GenericServiceImpl<Contrat, Long> implem
         target.setDateSignature(source.getDateSignature());
         target.setMontantTotal(source.getMontantTotal());
         target.setValide(source.isValide());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 
     @Override

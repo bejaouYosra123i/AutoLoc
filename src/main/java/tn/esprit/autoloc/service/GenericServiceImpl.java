@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.exception.ResourceNotFoundException;
 
 public abstract class GenericServiceImpl<T, ID> implements IGenericService<T, ID> {
@@ -60,4 +61,6 @@ public abstract class GenericServiceImpl<T, ID> implements IGenericService<T, ID
         }
         repository.deleteById(id);
     }
+
+    public abstract Vehicule desaffecte(Long id, Long idAgence);
 }

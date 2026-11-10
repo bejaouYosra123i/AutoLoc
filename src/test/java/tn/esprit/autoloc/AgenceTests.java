@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import tn.esprit.autoloc.calcul.VehiculeOffre;
 import tn.esprit.autoloc.domain.Agence;
 import tn.esprit.autoloc.domain.CategorieVehicule;
 import tn.esprit.autoloc.domain.StatutVehicule;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import tn.esprit.autoloc.service.BasicAgenceServiceImpl;
 import tn.esprit.autoloc.service.IAgenceService;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -157,6 +159,7 @@ public class AgenceTests {
         assertNotNull(saved.getIdAgence());
         assertEquals("Agence Tunis", saved.getNom());
     }
+
 
 }
 @Repository

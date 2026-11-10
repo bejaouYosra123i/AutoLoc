@@ -3,6 +3,7 @@ package tn.esprit.autoloc.service;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.domain.Reservation;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IReservationRepository;
 
 @Service
@@ -30,6 +31,11 @@ public class ReservationServiceImpl extends GenericServiceImpl<Reservation, Long
         target.setVehicule(source.getVehicule());
         target.setClient(source.getClient());
         target.setContrat(source.getContrat());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 
     @Override

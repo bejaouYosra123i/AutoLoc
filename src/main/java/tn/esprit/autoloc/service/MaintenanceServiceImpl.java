@@ -3,6 +3,7 @@ package tn.esprit.autoloc.service;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.domain.Maintenance;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IMaintenanceRepository;
 
 @Service
@@ -28,6 +29,11 @@ public class MaintenanceServiceImpl extends GenericServiceImpl<Maintenance, Long
         target.setDateFin(source.getDateFin());
         target.setDescription(source.getDescription());
         target.setVehicule(source.getVehicule());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 
     @Override

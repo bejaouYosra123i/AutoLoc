@@ -9,7 +9,7 @@ import lombok.Setter;
 @Table(name = "employe")
 @Getter
 @Setter
-@NoArgsConstructor
+
 @AllArgsConstructor
 
 public class Employe {
@@ -28,5 +28,7 @@ public class Employe {
     private RoleEmploye role;
     @ManyToOne
     private Agence agence;
+    public Employe() {
+    }
 
 }

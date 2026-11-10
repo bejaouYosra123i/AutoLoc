@@ -3,6 +3,7 @@ package tn.esprit.autoloc.service;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.domain.Paiement;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IPaiementRepository;
 
 @Service
@@ -51,5 +52,10 @@ public class PaiementServiceImpl extends GenericServiceImpl<Paiement, Long> impl
     @Override
     public void deleteById(Long id) {
         throw new UnsupportedOperationException("Paiement en lecture seule");
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 }

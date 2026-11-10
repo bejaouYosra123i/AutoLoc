@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.Utils;
 import tn.esprit.autoloc.domain.Client;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IClientRepository;
 
 @Service
@@ -31,6 +32,11 @@ public class ClientServiceImpl extends GenericServiceImpl<Client, Long> implemen
         target.setTelephone(source.getTelephone());
         target.setNumPermis(source.getNumPermis());
         target.setDateInscription(source.getDateInscription());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 
     @Override

@@ -1,4 +1,5 @@
 package tn.esprit.autoloc.domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -41,6 +42,7 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
     private StatutVehicule statut;
     @ManyToOne
+
     private Agence agence;
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("vehicule")

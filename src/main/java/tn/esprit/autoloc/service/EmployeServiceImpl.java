@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.Utils;
 import tn.esprit.autoloc.domain.Employe;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IEmployeRepository;
 
 @Service
@@ -29,6 +30,11 @@ public class EmployeServiceImpl extends GenericServiceImpl<Employe, Long> implem
         target.setPrenom(source.getPrenom());
         target.setRole(source.getRole());
         target.setAgence(source.getAgence());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
     }
 
     @Override

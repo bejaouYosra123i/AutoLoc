@@ -1,8 +1,10 @@
 package tn.esprit.autoloc.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.autoloc.Utils;
+import tn.esprit.autoloc.calcul.VehiculeOffre;
 import tn.esprit.autoloc.domain.Agence;
 import tn.esprit.autoloc.exception.ResourceNotFoundException;
 import tn.esprit.autoloc.repository.IAgenceRepository;
@@ -10,6 +12,7 @@ import tn.esprit.autoloc.repository.IAgenceRepository;
 import java.util.List;
 
 @Service
+
 @RequiredArgsConstructor
 public class BasicAgenceServiceImpl implements IAgenceService {
     final private IAgenceRepository repository;
@@ -66,4 +69,16 @@ public class BasicAgenceServiceImpl implements IAgenceService {
     public boolean hasVehicules(Long id) {
         return false;
     }
+
+    @Override
+    public String simuler(Agence agence, int nbJours, VehiculeOffre offre) {
+        return "";
+    }
+
+    @Override
+    public Agence updateAvecEmployes(Long id, Agence agence) {
+        return null;
+    }
+
+
 }

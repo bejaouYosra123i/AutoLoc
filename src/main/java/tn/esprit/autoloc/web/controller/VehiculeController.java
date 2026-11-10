@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.autoloc.domain.Equipement;
 import tn.esprit.autoloc.domain.Reservation;
 import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IReservationRepository;
@@ -90,4 +91,17 @@ public class VehiculeController {
 
         vehiculeService.deleteById(id);
     }
+    @PutMapping("/desaffecte/{id}")
+    public Vehicule desaffecte(@PathVariable Long id) {
+        return vehiculeService.desaffecte(id);
+    }
+    @PutMapping("/affecte/{id}/{idAgence}")
+    public Vehicule affecte(@PathVariable Long id,@PathVariable Long idAgence) {
+        return vehiculeService.desaffecte(id,idAgence);
+    }
+    @PutMapping("/affecte-equipement/{id}/{idEquipement}")
+    public Equipement affecteEquipement(@PathVariable Long id, @PathVariable Long idEquipement) {
+        return vehiculeService.affecteEquipement(id, idEquipement);
+    }
+
 }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.autoloc.Utils;
 import tn.esprit.autoloc.domain.Equipement;
+import tn.esprit.autoloc.domain.Vehicule;
 import tn.esprit.autoloc.repository.IEquipementRepository;
 
 @Service
@@ -26,6 +27,12 @@ public class EquipementServiceImpl extends GenericServiceImpl<Equipement, Long> 
     @Override
     protected void setFields(Equipement source, Equipement target) {
         target.setLibelle(source.getLibelle());
+    }
+
+    @Override
+    public Vehicule desaffecte(Long id, Long idAgence) {
+        return null;
+
     }
 
     @Override

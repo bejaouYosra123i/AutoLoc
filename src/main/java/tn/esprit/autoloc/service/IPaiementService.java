@@ -2,5 +2,8 @@ package tn.esprit.autoloc.service;
 
 import tn.esprit.autoloc.domain.Paiement;
 
-public interface IPaiementService extends IGenericService<Paiement, Long> {
+import java.rmi.Remote;
+
+public interface IPaiementService extends IReadGenericService<Paiement, Long> {
+
 }
